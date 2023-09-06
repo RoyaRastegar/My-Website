@@ -5,6 +5,8 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 const NavbarCom = () => {
   return (
     <>
@@ -26,22 +28,35 @@ const NavbarCom = () => {
                   About
                 </Link>
               </Nav.Link>
-              <NavDropdown title="Project" id="basic-nav-dropdown" >
+              <NavDropdown title="Project" id="basic-nav-dropdown">
                 <NavDropdown.Item>
-                  <Link className="link-drop" to='/todo'>ToDo</Link>
+                  <Link className="link-drop" to="/todo">
+                    ToDo
+                  </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link className="link-drop"to='/counter'>Counter</Link>
+                  <Link className="link-drop" to="/counter">
+                    Counter
+                  </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                
-                  <Link className="link-drop"to='/onlinshop'>OnlineShop</Link>
+                  <Link className="link-drop" to="/onlinshop">
+                    OnlineShop
+                  </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
                   <Link className="link-drop">Another</Link>
                 </NavDropdown.Item>
               </NavDropdown>
+              
+                <div className="login-div">
+                <Nav.Link>
+                  <Link to="/login" className="link-login">Login <FontAwesomeIcon icon={faRightToBracket} /></Link>
+                  
+                  </Nav.Link>
+                </div>
+              
             </Nav>
           </Navbar.Collapse>
         </Container>
