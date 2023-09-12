@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+import Cart from "./Cart";
+import { Products } from "./Data/Data";
+import ProductShow from "./ProductShow";
 
 const OnlineShop = () => {
   return (
     <>
-      <h1>OnlineShop</h1>
+      <Cart />
+      <div className="row">
+        {Products.map((product)=><ProductShow data={product}/>)}
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default OnlineShop
+export default OnlineShop;

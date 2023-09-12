@@ -6,6 +6,7 @@ import About from './Components/About/About';
 import Todo from './Components/Todo/Todo';
 import Counter from './Components/Counter/Counter';
 import OnlineShop from './Components/OnlinShop/OnlineShop';
+import Cart from './Components/OnlinShop/Cart';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
         <Route path='/todo' element={<Todo/>}/> 
         <Route path='/counter' element={<Counter/>}/> 
         <Route path='/onlinshop' element={<OnlineShop/>}/> 
+        <Route path='/cart' element={<Cart/>}/> 
       </Routes>
      </Router>
     </div>
