@@ -12,7 +12,7 @@ const NavbarCom = () => {
     <>
       <Navbar
         expand="lg"
-        className="navbar navbar-expand-sm bg-dark navbar-dark"
+        className="navbar navbar-expand-sm bg-dark navbar-dark nav "
       >
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

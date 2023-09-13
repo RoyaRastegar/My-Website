@@ -1,16 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      <h1 >Home</h1>
-      <Link to='/cddLeran'>
-        <img
-          className="w-50"
+      <h1 className="animate__animated animate__bounce">Home</h1>
+        <img className="animate__animated animate__bounce"
           src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
           alt="css imag"
         />
-      </Link>
+     
     </>
   );
 };

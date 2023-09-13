@@ -1,7 +1,7 @@
-import Mobile from "../Assets/mobile.jpg";
-import Watch from "../Assets/watchs.jpg";
-import Airpad from "../Assets/airpad.jpg";
-import Hedphon from "../Assets/hedphon.png";
+import Watch from '../../Assets/mobile.jpg'
+import Airpad from '../../Assets/mobile.jpg'
+import Hedphon from '../../Assets/mobile.jpg'
+import Mobile from '../../Assets/mobile.jpg'
 
 export const Products = [
   {
