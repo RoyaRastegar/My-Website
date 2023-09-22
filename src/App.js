@@ -7,6 +7,7 @@ import Todo from './Components/Todo/Todo';
 import Counter from './Components/Counter/Counter';
 import OnlineShop from './Components/OnlinShop/OnlineShop';
 import Cart from './Components/OnlinShop/Cart';
+import Login from './Components/Login/Login';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
         <Route path='/counter' element={<Counter/>}/> 
         <Route path='/onlinshop' element={<OnlineShop/>}/> 
         <Route path='/cart' element={<Cart/>}/> 
+        <Route path='/login' element={<Login/>}/>
       </Routes>
      </Router>
     </div>

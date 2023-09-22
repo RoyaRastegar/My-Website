@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 const Home = () => {
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+  useEffect(() => {
+    setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000);
+  }, []);
   return (
-    <>
-      <h1 className="animate__animated animate__bounce">Home</h1>
-        <img className="animate__animated animate__bounce"
-          src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
-          alt="css imag"
-        />
-     
-    </>
+    <div>
+      {" "}
+      <h5>Time : {time} </h5>
+    </div>
   );
 };
 
