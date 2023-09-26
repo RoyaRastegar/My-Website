@@ -1,18 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const Home = () => {
-  const [time, setTime] = useState(new Date().toLocaleTimeString());
-  useEffect(() => {
-    setInterval(() => {
-      setTime(new Date().toLocaleTimeString());
-    }, 1000);
-  }, []);
-  return (
-    <div>
-      {" "}
-      <h5>Time : {time} </h5>
-    </div>
-  );
+  return <div>safasdg</div>;
 };
 
 export default Home;
