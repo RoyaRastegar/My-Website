@@ -40,8 +40,18 @@ const NavbarCom = () => {
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
+                  <Link className="link-drop" to="/test1">
+                    Test1
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
                   <Link className="link-drop" to="/onlinshop">
                     OnlineShop
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link className="link-drop" to="/pizaamenu">
+                    Pizza-Menu
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
@@ -49,14 +59,14 @@ const NavbarCom = () => {
                   <Link className="link-drop">Another</Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              
-                <div className="login-div">
+
+              <div className="login-div">
                 <Nav.Link>
-                  <Link to="/login" className="link-login">Login <FontAwesomeIcon icon={faRightToBracket} /></Link>
-                  
-                  </Nav.Link>
-                </div>
-              
+                  <Link to="/login" className="link-login">
+                    Login <FontAwesomeIcon icon={faRightToBracket} />
+                  </Link>
+                </Nav.Link>
+              </div>
             </Nav>
           </Navbar.Collapse>
         </Container>
