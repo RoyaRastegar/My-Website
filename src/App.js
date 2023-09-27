@@ -11,6 +11,7 @@ import Login from "./Components/Login/Login";
 import Time from "./Components/Time/Time";
 import PizaaMenu from "./Components/Pizaa-Menu/Pizaa-Menu";
 import Test1 from "./Components/Test1/Test1";
+import Flashcards from "./Components/FlashCards/Flashcards";
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Pizaamenu" element={<PizaaMenu />} />
           <Route path="/test1" element={<Test1 />} />
+          <Route path="/flashcards" element={<Flashcards />} />
         </Routes>
       </Router>
     </div>

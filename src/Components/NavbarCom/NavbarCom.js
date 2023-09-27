@@ -45,6 +45,11 @@ const NavbarCom = () => {
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
+                  <Link className="link-drop" to="/flashcards">
+                    FlashCards
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
                   <Link className="link-drop" to="/onlinshop">
                     OnlineShop
                   </Link>
