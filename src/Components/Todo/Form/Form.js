@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Todo.css";
 import ListTodo from "../ListTodo/ListTodo";
+
 const Form = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
@@ -10,14 +11,14 @@ const Form = () => {
     if (todo.trim() !== "") {
       setTodos([
         ...todos,
-        { todoName: todo, complated: false, id: Math.random() * 1000 },
+        { todoName: todo, complated: false, id: Date.now() },
       ]);
       setTodo("");
     }
   }
   return (
     <>
-      <form className="add-form">
+      <form className="add-form" onSubmit={handelAddTodo}>
         <h3>list of todo 😧 </h3>
         <input
           type="text"
@@ -25,9 +26,9 @@ const Form = () => {
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
         />
-        <button onClick={handelAddTodo}>Add</button>
+        <button>Add</button>
       </form>
-      <ListTodo todo={todos} />
+      <ListTodo todos={todos} />
     </>
   );
 };

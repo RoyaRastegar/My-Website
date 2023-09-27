@@ -1,16 +1,24 @@
 import React from "react";
 
-const ListTodo = ({ todo }) => {
+const ListTodo = ({ todos }) => {
+  function deleteItem(id) {
+    const newTodosAfterDlete = todos.filter((t) => t.id != id);
+  }
   return (
     <>
       <div className="list">
         <ul>
-          {todo.map((todo) => (
-            <div>
+          {todos.map((todo) => (
+            <div key={todo.id}>
               <li>
-                <button>❌</button>
-                {todo.todoName}
-                <input type="checkbox" className="inputList" />
+                <span
+                  style={
+                    todo.complated ? { textDecoration: "line-through" } : {}
+                  }
+                >
+                  {todo.todoName}
+                </span>
+                <button onClick={() => deleteItem(todo.id)}>❌</button>
               </li>
             </div>
           ))}
