@@ -12,6 +12,7 @@ import Time from "./Components/Time/Time";
 import PizaaMenu from "./Components/Pizaa-Menu/Pizaa-Menu";
 import Test1 from "./Components/Test1/Test1";
 import Flashcards from "./Components/FlashCards/Flashcards";
+import DerivedState from "./Components/DerivedState/DerivedState";
 function App() {
   return (
     <div className="App">
@@ -30,6 +31,7 @@ function App() {
           <Route path="/Pizaamenu" element={<PizaaMenu />} />
           <Route path="/test1" element={<Test1 />} />
           <Route path="/flashcards" element={<Flashcards />} />
+          <Route path="/derivedstate" element={<DerivedState />} />
         </Routes>
       </Router>
     </div>

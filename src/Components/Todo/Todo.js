@@ -1,10 +1,23 @@
 import React from "react";
 import { useState } from "react";
 import "./Todo.css";
+import Form from "./Form/Form";
+import ListTodo from "./ListTodo/ListTodo";
+import Stats from "./Stats/Stats";
 const Todo = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
-
+  const [sortby, setSortby] = useState("all");
+  let todoListsort;
+  if (sortby === "all") {
+    todoListsort = todos;
+  }
+  if (sortby === "complated") {
+    todoListsort = todos.filter((t) => t.complated);
+  }
+  if (sortby === "uncomplated") {
+    todoListsort = todos.filter((t) => !t.complated);
+  }
   function handelAddTodo(e) {
     e.preventDefault();
     if (todo.trim() !== "") {
@@ -19,41 +32,40 @@ const Todo = () => {
     const newTodosAfterDlete = todos.filter((t) => t.id != id);
     setTodos(newTodosAfterDlete);
   }
-  function checkedItem(index) {
-    const updateTask = [...todos];
-    updateTask[index].completed = !updateTask[index].completed;
+  function checkedItem(id) {
+    setTodos((todos) =>
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, complated: !todo.complated } : todo
+      )
+    );
+    // const updateTask = [...todos];
+    // updateTask[index].completed = !updateTask[index].completed;
 
-    setTodos(updateTask);
+    // setTodos(updateTask);
   }
 
   return (
-    <>
-      <form className="add-form" onSubmit={handelAddTodo}>
-        <h3>list of todo 😧 </h3>
-        <input
-          type="text"
-          placeholder="Enter your work..."
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
-        />
-        <button>Add</button>
-      </form>
-
-      <div className="list">
-        <ul>
-          {todos.map((todo, index) => (
-            <li key={todo.id}>
-              <span className={todo.completed ? "completed" : ""}>
-                {todo.todoName}
-              </span>
-
-              <button onClick={() => deleteItem(todo.id)}>❌</button>
-              <button onClick={() => checkedItem(index)}>✔ </button>
-            </li>
-          ))}
-        </ul>
+    <div className="app">
+      <div className="heder">
+        <h1> Todo</h1>
       </div>
-    </>
+
+      <Form
+        todo={todo}
+        settodo={setTodo}
+        onClic={handelAddTodo}
+        todos={todos}
+        sortby={sortby}
+        setSortby={setSortby}
+      />
+      <ListTodo
+        todos={todos}
+        onClick={deleteItem}
+        onCheckedItem={checkedItem}
+        todoListsort={todoListsort}
+      />
+      <Stats todos={todos} />
+    </div>
   );
 };
 

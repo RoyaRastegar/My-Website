@@ -1,35 +1,20 @@
-import React, { useState } from "react";
-import "../Todo.css";
-import ListTodo from "../ListTodo/ListTodo";
-
-const Form = () => {
-  const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState([]);
-
-  function handelAddTodo(e) {
-    e.preventDefault();
-    if (todo.trim() !== "") {
-      setTodos([
-        ...todos,
-        { todoName: todo, complated: false, id: Date.now() },
-      ]);
-      setTodo("");
-    }
-  }
+const Form = ({ todo, settodo, onClic, sortby, setSortby }) => {
   return (
-    <>
-      <form className="add-form" onSubmit={handelAddTodo}>
-        <h3>list of todo 😧 </h3>
-        <input
-          type="text"
-          placeholder="Enter your work..."
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
-        />
-        <button>Add</button>
-      </form>
-      <ListTodo todos={todos} />
-    </>
+    <form className="add-form" onSubmit={onClic}>
+      <h3>list of todo 😧 </h3>
+      <input
+        type="text"
+        placeholder="Enter your work..."
+        value={todo}
+        onChange={(e) => settodo(e.target.value)}
+      />
+      <button>Add</button>
+      <select value={sortby} onChange={(e) => setSortby(e.target.value)}>
+        <option value="all">All</option>
+        <option value="complated">complated</option>
+        <option value="uncomplated">Uncomplated</option>
+      </select>
+    </form>
   );
 };
 

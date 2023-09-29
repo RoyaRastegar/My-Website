@@ -35,6 +35,11 @@ const NavbarCom = () => {
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
+                  <Link className="link-drop" to="/derivedState">
+                    Derived State
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
                   <Link className="link-drop" to="/counter">
                     Counter
                   </Link>
